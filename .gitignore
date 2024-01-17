@@ -2,3 +2,5 @@ solr/conf/
 anydone.sql
 message.sql
 mongo/database/
+
+.idea/
