@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  duodb:
+    image: wnameless/oracle-xe-11g-r2
+    ports:
+      - '49161:1521'
+    volumes:
+      - .:/duo
+    command: [ "/bin/bash", "-c", "sqlplus system/oracle@xe @setup_database" ]
+    environment:
+      ORACLE_ALLOW_REMOTE: 'true'
+      MYSQL_ROOT_USER: 'root'
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'orcl'
